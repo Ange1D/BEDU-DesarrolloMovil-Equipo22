@@ -20,6 +20,7 @@ fun bienvenida(){
 
 //JOSE
 fun visualizarPrograma(){
+  mostrarTareas()
 }
 
 //BRAULIO
@@ -40,6 +41,16 @@ fun editarTarea(){
 
 //JOSE
 fun eliminarTarea(){
+  mostrarTareas()
+  print("Escriba el número de la tarea que desea borrar: ")
+  val delTarea = readLine()?.toInt()
+  tareas.removeAt(delTarea!!.minus(1))
+  mostrarTareas()
+}
+
+//Nueva función para imprimir el arreglo completo de tareas
+fun mostrarTareas(){
+  for ((i, tarea) in tareas.withIndex()) println("${i + 1}.- $tarea")
 }
 
 
