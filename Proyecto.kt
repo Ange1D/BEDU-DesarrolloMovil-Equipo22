@@ -1,26 +1,19 @@
 val tareas = mutableListOf<String>() 
 
 fun main() {
-  
+  bienvenida()
 }
 
 fun bienvenida(){
-  var nombre 
-  val inputNombre = readLine()
   print("Ingrese nombre:")
+  val inputNombre = readLine()
   
-    print("Bienvenido $inputNombre Menu:
-          1 visualizar programa
-          2 revisar conflictos
-          3 ver resumen del usuario
-          4 Agregar tarea
-          5 Editar tarea
-          6 Eliminar tarea")
-    print("Opcion:")
+    print("Bienvenido $inputNombre Menu \n1 visualizar programa \n2 revisar conflictos \n3 ver resumen del usuario \n4 Agregar tarea \n5 Editar tarea \n6 Eliminar tarea\n")
+    print("Seleccione una opcion:")
     val input = readLine()
 
-    when(input){
-      1 ->
+    when(input?.toInt()){
+      1 -> visualizarPrograma()
     
     }
 }
