@@ -14,11 +14,11 @@ fun bienvenida(){
 
     when(input?.toInt()){
       1 -> visualizarPrograma()
-      2 -> visualizarPrograma()
-      3 -> visualizarPrograma()
-      4 -> visualizarPrograma()
-      5 -> visualizarPrograma()
-      6 -> visualizarPrograma()
+      2 -> revisarConflictos()
+      3 -> resumenUsuario()
+      4 -> AgregarTarea()
+      5 -> editarTarea()
+      6 -> eliminarTarea()
       else -> {  print("opcion no valida")  } 
     }
 }
