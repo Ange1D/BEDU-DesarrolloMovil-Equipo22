@@ -25,7 +25,12 @@ fun bienvenida(){
 
 //JOSE
 fun visualizarPrograma(){
-  mostrarTareas()
+  if(tareas.isEmpty()){
+    println("No hay ninguna tarea")
+  }
+  else{
+    mostrarTareas()
+  }
 }
 
 //BRAULIO
@@ -57,11 +62,16 @@ fun editarTarea(){
 
 //JOSE
 fun eliminarTarea(){
-  mostrarTareas()
-  print("Escriba el número de la tarea que desea borrar: ")
-  val delTarea = readLine()?.toInt()
-  tareas.removeAt(delTarea!!.minus(1))
-  mostrarTareas()
+  if(tareas.isEmpty()){
+    println("No hay ninguna tarea")
+  }
+  else{
+    mostrarTareas()
+    print("Escriba el número de la tarea que desea borrar: ")
+    val delTarea = readLine()?.toInt()
+    tareas.removeAt(delTarea!!.minus(1))
+    mostrarTareas()
+  }
 }
 
 //Nueva función para imprimir el arreglo completo de tareas
