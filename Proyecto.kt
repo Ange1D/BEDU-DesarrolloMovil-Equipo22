@@ -14,7 +14,12 @@ fun bienvenida(){
 
     when(input?.toInt()){
       1 -> visualizarPrograma()
-    
+      2 -> visualizarPrograma()
+      3 -> visualizarPrograma()
+      4 -> visualizarPrograma()
+      5 -> visualizarPrograma()
+      6 -> visualizarPrograma()
+      else -> {  print("opcion no valida")  } 
     }
 }
 
@@ -37,6 +42,17 @@ fun AgregarTarea(){
 
 //ANGEL
 fun editarTarea(){
+    if(tareas.isEmpty()){
+        println("No hay ninguna tarea")
+    }else{
+      mostrarTareas()
+        print("Numero de tarea a editar")
+        val tareaIndice = readLine()
+        print("Escribe la nueva tarea")
+        val tareaEdit = readLine()
+        tareas.set(tareaIndice?.toInt()!!.minus(1), tareaEdit.toString())
+        println("Tarea editada")
+    }
 }
 
 //JOSE
