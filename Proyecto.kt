@@ -4,6 +4,17 @@ val horariosTareas = mutableListOf<String>() //Lista mutable para guardar los ho
 fun main() {
     bienvenida()
 }
+//BRAULIO
+class usuario(nombre:String, contraseña:String,tareasTotales:Int,tareasRealizadas:Int){
+fun login(){}
+}
+//JOSE
+class tareas(titulo:String,objetivo:String,descripcion:String,fechaInicio:Date, fechaFinalizacion:date, lapso:String
+            estado:Boolea, dependenciaInterna:String , dependenciaExterna:String,frecuencia:String, prioridad:Int){
+constructor agregarTarea(){}
+fun editarTarea(){}
+}
+    
 
 fun bienvenida() {
     var op = 0
