@@ -1,26 +1,56 @@
+package proyectoGuia
+
+import java.time.LocalTime
+
 val tareas = mutableListOf<String>()
 val horariosTareas = mutableListOf<String>() //Lista mutable para guardar los horarios de cada tarea
 
 fun main() {
     bienvenida()
 }
+
 //BRAULIO
-class usuario(nombre:String, contraseña:String,tareasTotales:Int,tareasRealizadas:Int){
-fun login(){}
+class Usuario(var nombre: String, var contrasenna: String, var tareasTotales: Int = 0, var tareasRealizadas: Int = 0) {
+    init {
+        println(
+            "Datos de inicio de sesión:\n" +
+                    "\tUsuario: ${this.nombre}.\n" +
+                    "\tContraseña: ${this.contrasenna}."
+        )
+    }
+
+    fun loggin(nombre: String, contrasenna: String): Boolean {
+        return nombre.equals(this.nombre) && contrasenna.equals(this.contrasenna)
+    }
 }
+
 //JOSE
-class tareas(titulo:String,objetivo:String,descripcion:String,fechaInicio:Date, fechaFinalizacion:date, lapso:String
-            estado:Boolea, dependenciaInterna:String , dependenciaExterna:String,frecuencia:String, prioridad:Int){
-constructor agregarTarea(){}
-fun editarTarea(){}
+class Tarea(var titulo: String, var fechaInicio: LocalTime, var fechaFinalizacion: LocalTime, var objetivo: String = "", var descripcion: String = "", var lapso: String = "",
+            var estado: Boolean = false, var dependenciaInterna: String = "", var dependenciaExterna: String = "", var frecuencia: String = "", var prioridad: Int = 0) {
+    fun editarTarea() {
+
+    }
 }
-    
 
 fun bienvenida() {
     var op = 0
-    print("Ingrese su nombre: ")
-    val inputNombre = readLine()
-    println("Bienvenido a tu agenda, $inputNombre.")
+    var inputNombre = ""
+    var inputContrasenna = ""
+    val usuario = Usuario("Usuario de prueba", "contraseña_de_prueba")
+
+    do {
+        print(
+            "---------------------------------------------\n" +
+                    "Iniciar sesión:\n"
+        )
+        print("\tIngrese el nombre de usuario: ")
+        inputNombre = readLine().toString()
+        print("\tIngrese la contraseña: ")
+        inputContrasenna = readLine().toString()
+    } while (!usuario.loggin(inputNombre, inputContrasenna))
+
+
+    println("\nBienvenido a tu agenda, ${usuario.nombre}.")
 
     do {
         print(
@@ -46,9 +76,9 @@ fun bienvenida() {
             4 -> AgregarTarea()
             5 -> editarTarea()
             6 -> eliminarTarea()
-            7 -> print("Hasta la próxima $inputNombre.")
+            7 -> print("Hasta la próxima, ${usuario.nombre}.")
             else -> {
-                print("opcion no valida.")
+                print("Opción no valida.")
             }
         }
     } while (op != 7)
@@ -74,20 +104,23 @@ fun revisarConflictos() {
         "---------------------------------------------\n" +
                 "Revisión de conflictos:\n"
     )
-    for ((i, horarioComparando) in horariosTareas.withIndex()){
+    for ((i, horarioComparando) in horariosTareas.withIndex()) {
         for ((j, horarioComparador) in horariosTareas.withIndex()) {
             if (i != j) {
                 if (horarioComparando.contains(horarioComparador.substring(0, 5)) ||
-                    horarioComparando.contains(horarioComparador.substring(8)))
-                setConflictos.add("La tarea ${tareas[i]}, con horario: $horarioComparando\n" +
-                        "entra en conflicto con la tarea ${tareas[j]}, con horario: $horarioComparador.\n" +
-                        "Es necesario editar alguna de las dos.")
+                    horarioComparando.contains(horarioComparador.substring(8))
+                )
+                    setConflictos.add(
+                        "La tarea ${tareas[i]}, con horario: $horarioComparando\n" +
+                                "entra en conflicto con la tarea ${tareas[j]}, con horario: $horarioComparador.\n" +
+                                "Es necesario editar alguna de las dos."
+                    )
             }
         }
     }
     if (!setConflictos.isEmpty())
         for ((i, elemento) in setConflictos.withIndex())
-            println("  ${i+1}) $elemento\n")
+            println("  ${i + 1}) $elemento\n")
     else
         println("No se encontraron conflictos")
 }
@@ -106,13 +139,16 @@ fun AgregarTarea() {
         "---------------------------------------------\n" +
                 "Agregar tarea:\n"
     )
-    var horario = ""
     print("Ingrese el título de la tarea: ");
-    var title = readLine().toString()
+    val title = readLine().toString()
     tareas.add(title)
-    print("\tIngrese la hora de inicio [HH:mm]: "); horario += readLine().toString()
-    horario += " - "
-    print("\tIngrese la hora de finalización [HH:mm]: "); horario += readLine().toString()
+    print("\tIngrese la hora de inicio [HH:mm]: ");
+    var horario: String = readLine().toString()
+    val horarioInicio: LocalTime = LocalTime.of(horario.substring(0,2).toInt(), horario.substring(3).toInt())
+    print("\tIngrese la hora de finalización [HH:mm]: "); horario = readLine().toString()
+    val horarioFin: LocalTime = LocalTime.of(horario.substring(0,2).toInt(), horario.substring(3).toInt())
+
+    horario = "$horarioInicio - $horarioFin"
     horariosTareas.add(horario)
 }
 
