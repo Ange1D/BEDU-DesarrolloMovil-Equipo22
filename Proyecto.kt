@@ -1,5 +1,3 @@
-package proyectoGuia
-
 import java.time.LocalTime
 
 val tareas = mutableListOf<String>()
