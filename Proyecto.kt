@@ -1,7 +1,11 @@
-import java.time.LocalTime
+import java.time.LocalDateTime
 
-val tareas = mutableListOf<String>()
-val horariosTareas = mutableListOf<String>() //Lista mutable para guardar los horarios de cada tarea
+//ANGEL
+data class Tarea(var titulo: String, var fechaInicio: LocalDateTime, var fechaFinalizacion: LocalDateTime, var objetivo: String = "", var descripcion: String = "", var lapso: String = "",
+     var estado: Boolean = false, var dependenciaInterna: String = "", var dependenciaExterna: String = "", var frecuencia: String = "", var prioridad: Int = 0)
+
+val tareas = mutableListOf<Tarea>()
+
 
 fun main() {
     bienvenida()
@@ -19,14 +23,6 @@ class Usuario(var nombre: String, var contrasenna: String, var tareasTotales: In
 
     fun loggin(nombre: String, contrasenna: String): Boolean {
         return nombre.equals(this.nombre) && contrasenna.equals(this.contrasenna)
-    }
-}
-
-//JOSE
-class Tarea(var titulo: String, var fechaInicio: LocalTime, var fechaFinalizacion: LocalTime, var objetivo: String = "", var descripcion: String = "", var lapso: String = "",
-            var estado: Boolean = false, var dependenciaInterna: String = "", var dependenciaExterna: String = "", var frecuencia: String = "", var prioridad: Int = 0) {
-    fun editarTarea() {
-
     }
 }
 
@@ -56,7 +52,7 @@ fun bienvenida() {
                     "Menú principal:\n"
         )
         println(
-            "\t1) Visualizar programa.\n" +
+                    "\t1) Visualizar programa.\n" +
                     "\t2) Revisar conflictos.\n" +
                     "\t3) Ver resumen del usuario.\n" +
                     "\t4) Agregar tarea.\n" +
@@ -71,7 +67,7 @@ fun bienvenida() {
             1 -> visualizarPrograma()
             2 -> revisarConflictos()
             3 -> resumenUsuario()
-            4 -> AgregarTarea()
+            4 -> agregarTarea()
             5 -> editarTarea()
             6 -> eliminarTarea()
             7 -> print("Hasta la próxima, ${usuario.nombre}.")
@@ -132,7 +128,7 @@ fun resumenUsuario() {
 }
 
 //BRAULIO
-fun AgregarTarea() {
+fun agregarTarea() {
     println(
         "---------------------------------------------\n" +
                 "Agregar tarea:\n"
