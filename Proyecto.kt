@@ -134,16 +134,41 @@ fun agregarTarea() {
                 "Agregar tarea:\n"
     )
     print("Ingrese el título de la tarea: ");
-    val title = readLine().toString()
-    tareas.add(title)
-    print("\tIngrese la hora de inicio [HH:mm]: ");
-    var horario: String = readLine().toString()
-    val horarioInicio: LocalTime = LocalTime.of(horario.substring(0,2).toInt(), horario.substring(3).toInt())
-    print("\tIngrese la hora de finalización [HH:mm]: "); horario = readLine().toString()
-    val horarioFin: LocalTime = LocalTime.of(horario.substring(0,2).toInt(), horario.substring(3).toInt())
+        val title = readLine().toString()
+        print("\tIngrese el mes de inicio [MM]: "); 
+        val mesInicio = readLine().toInt()
+        print("\tIngrese el dia de inicio [DD]: "); 
+        val diaInicio = readLine().toInt()
+        print("\tIngrese la hora de inicio [HH]: "); 
+        val horarioInicio = readLine().toInt()
+        print("\tIngrese el mes de finalización [MM]: "); 
+        val mesFin = readLine().toInt()
+        print("\tIngrese el dia de finalización [DD]: "); 
+        val diaFin = readLine().toInt()
+        print("\tIngrese la hora de finalización [HH]: "); 
+        val horarioFin = readLine().toInt()
+        print("Objetivo: ")
+        val objetivo = readLine()
+        print("Descripcion: ")
+        val descripcion = readLine()
+        print("Lapso: ")
+        val lapso = readLine()
+        print("dependenciaInterna: ")
+        val dependenciaInterna = readLine()
+        print("dependenciaExterna: ")
+        val dependenciaExterna = readLine()
+        print("frecuencia: ")
+        val frecuencia = readLine()
+        print("prioridad: 1.-Urgente 2.-")
+        val prioridad = readLine().toInt()
 
-    horario = "$horarioInicio - $horarioFin"
-    horariosTareas.add(horario)
+        tareas.add(Tarea(title,
+                        LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
+                        LocalDateTime.of(2021, mesFin, diaFin, horarFin, 00),
+                        objetivo,descripcion,
+                        lapso,false,dependenciaInterna,
+                        dependenciaExterna,frecuencia,prioridad)
+                  )
 }
 
 //ANGEL
