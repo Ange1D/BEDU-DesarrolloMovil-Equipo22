@@ -148,7 +148,6 @@ fun agregarTarea() {
 
 //ANGEL
 fun editarTarea() {
-    var horario = ""
     println(
         "---------------------------------------------\n" +
                 "Editar tarea:\n"
@@ -161,12 +160,41 @@ fun editarTarea() {
         val tareaIndice = readLine()
         print("Escribe el nuevo título para la tarea: ")
         val tareaEdit = readLine()
-        print("\tIngrese la hora de inicio [HH:mm]: "); horario += readLine().toString()
-        horario += " - "
-        print("\tIngrese la hora de finalización [HH:mm]: "); horario += readLine().toString()
+        print("\tIngrese el mes de inicio [MM]: "); 
+        val mesInicio = readLine().toInt()
+        print("\tIngrese el dia de inicio [DD]: "); 
+        val diaInicio = readLine().toInt()
+        print("\tIngrese la hora de inicio [HH]: "); 
+        val horarioInicio = readLine().toInt()
+        print("\tIngrese el mes de finalización [MM]: "); 
+        val mesFin = readLine().toInt()
+        print("\tIngrese el dia de finalización [DD]: "); 
+        val diaFin = readLine().toInt()
+        print("\tIngrese la hora de finalización [HH]: "); 
+        val horarioFin = readLine().toInt()
+        print("Objetivo: ")
+        val objetivo = readLine()
+        print("Descripcion: ")
+        val descripcion = readLine()
+        print("Lapso: ")
+        val lapso = readLine()
+        print("dependenciaInterna: ")
+        val dependenciaInterna = readLine()
+        print("dependenciaExterna: ")
+        val dependenciaExterna = readLine()
+        print("frecuencia: ")
+        val frecuencia = readLine()
+        print("prioridad: 1.-Urgente 2.-")
+        val prioridad = readLine().toInt()
 
-        tareas.set(tareaIndice?.toInt()!!.minus(1), tareaEdit.toString())
-        horariosTareas.set(tareaIndice?.toInt()!!.minus(1), horario)
+        tareas.set(tareaIndice?.toInt()!!.minus(1), 
+                  Tarea(tareaEdit,LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
+                        LocalDateTime.of(2021, mesFin, diaFin, horarFin, 00),
+                        objetivo,descripcion,
+                        lapso,false,dependenciaInterna,
+                        dependenciaExterna,frecuencia,prioridad)
+                  )
+        
         println("Tarea editada satisfactoriamente.")
     }
 }
