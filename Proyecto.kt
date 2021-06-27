@@ -2,7 +2,7 @@ import java.time.LocalDateTime
 
 //ANGEL
 data class Tarea(var titulo: String, var fechaInicio: LocalDateTime, var fechaFinalizacion: LocalDateTime, var objetivo: String = "", var descripcion: String = "", var lapso: String = "",
-     var estado: Boolean = false, var dependenciaInterna: String = "", var dependenciaExterna: String = "", var frecuencia: String = "", var prioridad: Int = 0)
+                 var estado: Boolean = false, var dependenciaInterna: String = "", var dependenciaExterna: String = "", var frecuencia: String = "", var prioridad: Int = 0)
 
 val tareas = mutableListOf<Tarea>()
 
@@ -52,7 +52,7 @@ fun bienvenida() {
                     "Menú principal:\n"
         )
         println(
-                    "\t1) Visualizar programa.\n" +
+            "\t1) Visualizar programa.\n" +
                     "\t2) Revisar conflictos.\n" +
                     "\t3) Ver resumen del usuario.\n" +
                     "\t4) Agregar tarea.\n" +
@@ -98,20 +98,22 @@ fun revisarConflictos() {
         "---------------------------------------------\n" +
                 "Revisión de conflictos:\n"
     )
-    for ((i, horarioComparando) in horariosTareas.withIndex()) {
-        for ((j, horarioComparador) in horariosTareas.withIndex()) {
+    
+    for ((i, horarioComparando) in tareas.withIndex()) {
+        for ((j, horarioComparador) in tareas.withIndex()) {
             if (i != j) {
-                if (horarioComparando.contains(horarioComparador.substring(0, 5)) ||
-                    horarioComparando.contains(horarioComparador.substring(8))
-                )
+                if (horarioComparando.fechaInicio.toString().contains(horarioComparador.fechaInicio.toString()) ||
+                    horarioComparando.fechaFinalizacion.toString().contains(horarioComparador.fechaFinalizacion.toString())) {
                     setConflictos.add(
-                        "La tarea ${tareas[i]}, con horario: $horarioComparando\n" +
-                                "entra en conflicto con la tarea ${tareas[j]}, con horario: $horarioComparador.\n" +
+                        "La tarea ${tareas[i]}, con horario: ${horarioComparando.fechaInicio} - ${horarioComparando.fechaFinalizacion}\n" +
+                                "entra en conflicto con la tarea ${tareas[j]}, con horario: ${horarioComparador.fechaInicio} - ${horarioComparador.fechaFinalizacion}.\n" +
                                 "Es necesario editar alguna de las dos."
                     )
+                }
             }
         }
     }
+    
     if (!setConflictos.isEmpty())
         for ((i, elemento) in setConflictos.withIndex())
             println("  ${i + 1}) $elemento\n")
@@ -134,41 +136,41 @@ fun agregarTarea() {
                 "Agregar tarea:\n"
     )
     print("Ingrese el título de la tarea: ");
-        val title = readLine().toString()
-        print("\tIngrese el mes de inicio [MM]: "); 
-        val mesInicio = readLine()?.toInt()
-        print("\tIngrese el dia de inicio [DD]: "); 
-        val diaInicio = readLine()?.toInt()
-        print("\tIngrese la hora de inicio [HH]: "); 
-        val horarioInicio = readLine()?.toInt()
-        print("\tIngrese el mes de finalización [MM]: "); 
-        val mesFin = readLine()?.toInt()
-        print("\tIngrese el dia de finalización [DD]: "); 
-        val diaFin = readLine()?.toInt()
-        print("\tIngrese la hora de finalización [HH]: "); 
-        val horarioFin = readLine()?.toInt()
-        print("Objetivo: ")
-        val objetivo = readLine()
-        print("Descripcion: ")
-        val descripcion = readLine()
-        print("Lapso: ")
-        val lapso = readLine()
-        print("dependenciaInterna: ")
-        val dependenciaInterna = readLine()
-        print("dependenciaExterna: ")
-        val dependenciaExterna = readLine()
-        print("frecuencia: ")
-        val frecuencia = readLine()
-        print("prioridad: 1.-Urgente 2.-")
-        val prioridad = readLine()?.toInt()
+    val title = readLine().toString()
+    print("\tIngrese el mes de inicio [MM]: ");
+    val mesInicio = readLine()?.toInt()!!
+    print("\tIngrese el dia de inicio [DD]: ");
+    val diaInicio = readLine()?.toInt()!!
+    print("\tIngrese la hora de inicio [HH]: ");
+    val horarioInicio = readLine()?.toInt()!!
+    print("\tIngrese el mes de finalización [MM]: ");
+    val mesFin = readLine()?.toInt()!!
+    print("\tIngrese el dia de finalización [DD]: ");
+    val diaFin = readLine()?.toInt()!!
+    print("\tIngrese la hora de finalización [HH]: ");
+    val horarioFin = readLine()?.toInt()!!
+    print("Objetivo: ")
+    val objetivo = readLine().toString()
+    print("Descripcion: ")
+    val descripcion = readLine().toString()
+    print("Lapso: ")
+    val lapso = readLine().toString()
+    print("dependenciaInterna: ")
+    val dependenciaInterna = readLine().toString()
+    print("dependenciaExterna: ")
+    val dependenciaExterna = readLine().toString()
+    print("frecuencia: ")
+    val frecuencia = readLine().toString()
+    print("prioridad: 1.-Urgente 2.-")
+    val prioridad = readLine()?.toInt()!!
 
-        tareas.add(Tarea(title,
-                        LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
-                        LocalDateTime.of(2021, mesFin, diaFin, horarFin, 00),
-                        objetivo,descripcion,
-                        lapso,false,dependenciaInterna,
-                        dependenciaExterna,frecuencia,prioridad)
-                  )
+    tareas.add(Tarea(title,
+        LocalDateTime.of(2021, mesInicio, diaInicio, horarioInicio, 0,0),
+        LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0,0),
+        objetivo,descripcion,
+        lapso,false,dependenciaInterna,
+        dependenciaExterna,frecuencia,prioridad)
+    )
 }
 
 //ANGEL
@@ -182,44 +184,45 @@ fun editarTarea() {
     } else {
         mostrarTareas()
         print("Numero de tarea a editar: ")
-        val tareaIndice = readLine()
+        val tareaIndice = readLine()?.toInt()!!
         print("Escribe el nuevo título para la tarea: ")
-        val tareaEdit = readLine()
-        print("\tIngrese el mes de inicio [MM]: "); 
-        val mesInicio = readLine()?.toInt()
-        print("\tIngrese el dia de inicio [DD]: "); 
-        val diaInicio = readLine()?.toInt()
-        print("\tIngrese la hora de inicio [HH]: "); 
-        val horarioInicio = readLine()?.toInt()
-        print("\tIngrese el mes de finalización [MM]: "); 
-        val mesFin = readLine()?.toInt()
-        print("\tIngrese el dia de finalización [DD]: "); 
-        val diaFin = readLine()?.toInt()
-        print("\tIngrese la hora de finalización [HH]: "); 
-        val horarioFin = readLine()?.toInt()
+        val tareaEdit = readLine().toString()
+        print("\tIngrese el mes de inicio [MM]: ");
+        val mesInicio = readLine()?.toInt()!!
+        print("\tIngrese el dia de inicio [DD]: ");
+        val diaInicio = readLine()?.toInt()!!
+        print("\tIngrese la hora de inicio [HH]: ");
+        val horarioInicio = readLine()?.toInt()!!
+        print("\tIngrese el mes de finalización [MM]: ");
+        val mesFin = readLine()?.toInt()!!
+        print("\tIngrese el dia de finalización [DD]: ");
+        val diaFin = readLine()?.toInt()!!
+        print("\tIngrese la hora de finalización [HH]: ");
+        val horarioFin = readLine()?.toInt()!!
         print("Objetivo: ")
-        val objetivo = readLine()
+        val objetivo = readLine().toString()
         print("Descripcion: ")
-        val descripcion = readLine()
+        val descripcion = readLine().toString()
         print("Lapso: ")
-        val lapso = readLine()
+        val lapso = readLine().toString()
         print("dependenciaInterna: ")
-        val dependenciaInterna = readLine()
+        val dependenciaInterna = readLine().toString()
         print("dependenciaExterna: ")
-        val dependenciaExterna = readLine()
+        val dependenciaExterna = readLine().toString()
         print("frecuencia: ")
-        val frecuencia = readLine()
+        val frecuencia = readLine().toString()
         print("prioridad: 1.-Urgente 2.-")
-        val prioridad = readLine()?.toInt()
+        val prioridad = readLine()?.toInt()!!
 
-        tareas.set(tareaIndice?.toInt()!!.minus(1), 
-                  Tarea(tareaEdit,LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
-                        LocalDateTime.of(2021, mesFin, diaFin, horarFin, 00),
-                        objetivo,descripcion,
-                        lapso,false,dependenciaInterna,
-                        dependenciaExterna,frecuencia,prioridad)
-                  )
-        
+        tareas.set(tareaIndice.minus(1),
+            Tarea(tareaEdit,
+                LocalDateTime.of(2021, mesInicio, diaInicio, horarioInicio, 0,0),
+                LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0,0),
+                objetivo,descripcion,
+                lapso,false,dependenciaInterna,
+                dependenciaExterna,frecuencia,prioridad)
+        )
+
         println("Tarea editada satisfactoriamente.")
     }
 }
