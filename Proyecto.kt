@@ -136,17 +136,17 @@ fun agregarTarea() {
     print("Ingrese el título de la tarea: ");
         val title = readLine().toString()
         print("\tIngrese el mes de inicio [MM]: "); 
-        val mesInicio = readLine().toInt()
+        val mesInicio = readLine()?.toInt()
         print("\tIngrese el dia de inicio [DD]: "); 
-        val diaInicio = readLine().toInt()
+        val diaInicio = readLine()?.toInt()
         print("\tIngrese la hora de inicio [HH]: "); 
-        val horarioInicio = readLine().toInt()
+        val horarioInicio = readLine()?.toInt()
         print("\tIngrese el mes de finalización [MM]: "); 
-        val mesFin = readLine().toInt()
+        val mesFin = readLine()?.toInt()
         print("\tIngrese el dia de finalización [DD]: "); 
-        val diaFin = readLine().toInt()
+        val diaFin = readLine()?.toInt()
         print("\tIngrese la hora de finalización [HH]: "); 
-        val horarioFin = readLine().toInt()
+        val horarioFin = readLine()?.toInt()
         print("Objetivo: ")
         val objetivo = readLine()
         print("Descripcion: ")
@@ -160,7 +160,7 @@ fun agregarTarea() {
         print("frecuencia: ")
         val frecuencia = readLine()
         print("prioridad: 1.-Urgente 2.-")
-        val prioridad = readLine().toInt()
+        val prioridad = readLine()?.toInt()
 
         tareas.add(Tarea(title,
                         LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
@@ -186,17 +186,17 @@ fun editarTarea() {
         print("Escribe el nuevo título para la tarea: ")
         val tareaEdit = readLine()
         print("\tIngrese el mes de inicio [MM]: "); 
-        val mesInicio = readLine().toInt()
+        val mesInicio = readLine()?.toInt()
         print("\tIngrese el dia de inicio [DD]: "); 
-        val diaInicio = readLine().toInt()
+        val diaInicio = readLine()?.toInt()
         print("\tIngrese la hora de inicio [HH]: "); 
-        val horarioInicio = readLine().toInt()
+        val horarioInicio = readLine()?.toInt()
         print("\tIngrese el mes de finalización [MM]: "); 
-        val mesFin = readLine().toInt()
+        val mesFin = readLine()?.toInt()
         print("\tIngrese el dia de finalización [DD]: "); 
-        val diaFin = readLine().toInt()
+        val diaFin = readLine()?.toInt()
         print("\tIngrese la hora de finalización [HH]: "); 
-        val horarioFin = readLine().toInt()
+        val horarioFin = readLine()?.toInt()
         print("Objetivo: ")
         val objetivo = readLine()
         print("Descripcion: ")
@@ -210,7 +210,7 @@ fun editarTarea() {
         print("frecuencia: ")
         val frecuencia = readLine()
         print("prioridad: 1.-Urgente 2.-")
-        val prioridad = readLine().toInt()
+        val prioridad = readLine()?.toInt()
 
         tareas.set(tareaIndice?.toInt()!!.minus(1), 
                   Tarea(tareaEdit,LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 00),
