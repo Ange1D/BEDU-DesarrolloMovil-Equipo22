@@ -51,28 +51,46 @@ fun bienvenida() {
             "---------------------------------------------\n" +
                     "Menú principal:\n"
         )
-        println(
-            "\t1) Visualizar programa.\n" +
-                    "\t2) Revisar conflictos.\n" +
-                    "\t3) Ver resumen del usuario.\n" +
-                    "\t4) Agregar tarea.\n" +
-                    "\t5) Editar tarea.\n" +
-                    "\t6) Eliminar tarea.\n" +
-                    "\t7) Cerrar Agenda."
-        )
+        //Se agregó la condición en caso de que la agenda esté vacía
+        if (tareas.isEmpty()) {
+            println(
+                "\t1) Agregar tarea.\n" +
+                "\t2) Cerrar Agenda."
+            )
+        }
+        else {
+            println(
+                "\t1) Visualizar programa.\n" +
+                "\t2) Revisar conflictos.\n" +
+                "\t3) Ver resumen del usuario.\n" +
+                "\t4) Agregar tarea.\n" +
+                "\t5) Editar tarea.\n" +
+                "\t6) Eliminar tarea.\n" +
+                "\t7) Cerrar Agenda."
+            )
+        }
         print("Seleccione una opcion: ")
         op = readLine()!!.toInt()
-
-        when (op) {
-            1 -> visualizarPrograma()
-            2 -> revisarConflictos()
-            3 -> resumenUsuario()
-            4 -> agregarTarea()
-            5 -> editarTarea()
-            6 -> eliminarTarea()
-            7 -> print("Hasta la próxima, ${usuario.nombre}.")
-            else -> {
-                print("Opción no valida.")
+        //Se agregó esta validación para ir acorde a la anterior
+        if (tareas.isEmpty()) {
+            when (op) {
+                1 -> agregarTarea()
+                2 -> { op = 7
+                    print("Hasta la próxima, ${usuario.nombre}.") }
+            }
+        }
+        else {
+            when (op) {
+                1 -> visualizarPrograma()
+                2 -> revisarConflictos()
+                3 -> resumenUsuario()
+                4 -> agregarTarea()
+                5 -> editarTarea()
+                6 -> eliminarTarea()
+                7 -> print("Hasta la próxima, ${usuario.nombre}.")
+                else -> {
+                    println("Opción no valida, inténtelo de nuevo...")
+                }
             }
         }
     } while (op != 7)
@@ -134,21 +152,22 @@ fun agregarTarea() {
     println(
         "---------------------------------------------\n" +
                 "Agregar tarea:\n"
+      //José: Se hicieron ligeras correcciones, ahora ya guarda la tarea (falta imprimir la salida correctamente)
     )
     print("Ingrese el título de la tarea: ");
     val title = readLine().toString()
     print("\tIngrese el mes de inicio [MM]: ");
-    val mesInicio = readLine()?.toInt()!!
+    val mesInicio = readLine()!!.toInt()
     print("\tIngrese el dia de inicio [DD]: ");
-    val diaInicio = readLine()?.toInt()!!
+    val diaInicio = readLine()!!.toInt()
     print("\tIngrese la hora de inicio [HH]: ");
-    val horarioInicio = readLine()?.toInt()!!
+    val horaInicio = readLine()!!.toInt()
     print("\tIngrese el mes de finalización [MM]: ");
-    val mesFin = readLine()?.toInt()!!
+    val mesFin = readLine()!!.toInt()
     print("\tIngrese el dia de finalización [DD]: ");
-    val diaFin = readLine()?.toInt()!!
+    val diaFin = readLine()!!.toInt()
     print("\tIngrese la hora de finalización [HH]: ");
-    val horarioFin = readLine()?.toInt()!!
+    val horarioFin = readLine()!!.toInt()
     print("Objetivo: ")
     val objetivo = readLine().toString()
     print("Descripcion: ")
@@ -156,21 +175,18 @@ fun agregarTarea() {
     print("Lapso: ")
     val lapso = readLine().toString()
     print("dependenciaInterna: ")
-    val dependenciaInterna = readLine().toString()
+    val dependenciaInterna = readLine()!!.toBoolean()
     print("dependenciaExterna: ")
     val dependenciaExterna = readLine().toString()
     print("frecuencia: ")
     val frecuencia = readLine().toString()
     print("prioridad: 1.-Urgente 2.-")
-    val prioridad = readLine()?.toInt()!!
+    val prioridad = readLine().toString()
 
-    tareas.add(Tarea(title,
-        LocalDateTime.of(2021, mesInicio, diaInicio, horarioInicio, 0,0),
-        LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0,0),
-        objetivo,descripcion,
-        lapso,false,dependenciaInterna,
-        dependenciaExterna,frecuencia,prioridad)
-    )
+    val newTarea: Tarea = Tarea(title, LocalDateTime.of(2021, mesInicio, diaInicio, horaInicio, 0,0),
+        LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0, 0), objetivo,  descripcion, lapso,
+        dependenciaInterna, dependenciaExterna, frecuencia, prioridad)
+    tareas.add(newTarea)
 }
 
 //ANGEL
