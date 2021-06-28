@@ -436,8 +436,19 @@ DESCRIPCION: En esta función se utiliza un for con la función WithIndex() de l
 con el índice y el título de las tareas que contiene la lista.
  */
 fun mostrarTareas() {
-    for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}) ${tarea.titulo}: ${tarea.lapso}.")
-}
+        for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}.- \n" +
+                "Título: ${tarea.titulo}\n" +
+                "Fecha de inicio: ${tarea.fechaInicio}\n" +
+                "Fecha final: ${tarea.fechaFinalizacion}\n" +
+                "Objetivo: ${tarea.objetivo}\n" +
+                "Descripción: ${tarea.descripcion}\n" +
+                "Lapso: ${tarea.lapso}" +
+                "Dependencia Interna: ${tarea.dependenciaInterna}\n" +
+                "Dependencia Externa: ${tarea.dependenciaExterna}\n" +
+                "Frecuencia: ${tarea.frecuencia}\n" +
+                "Prioridad: ${tarea.prioridad}\n"
+        )
+    }
 
 /*
 AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
