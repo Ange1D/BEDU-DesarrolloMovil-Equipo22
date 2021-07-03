@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías.">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
+    </list>
+    <list id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="Se agregaron archivos del proyecto que faltaban al repositorio" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ukDPVe0ktsNwTizeOFNRz1WotX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="template.copyright.formatting" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="" />
+      <changelist id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="" />
+      <created>1625200671185</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625200671185</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Se agregaron archivos del proyecto que faltaban al repositorio">
+      <created>1625202782356</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1625202782356</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Se agregaron archivos del proyecto que faltaban al repositorio">
+      <created>1625203015591</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1625203015591</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías.">
+      <created>1625203339486</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625203339486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se agregaron archivos del proyecto que faltaban al repositorio" />
+    <MESSAGE value="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías." />
+    <option name="LAST_COMMIT_MESSAGE" value="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías." />
+  </component>
+</project>
