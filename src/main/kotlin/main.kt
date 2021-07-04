@@ -1,3 +1,5 @@
+import TDA.Menu
+
 /**
  * Copyright (c) 2021.
  * @Author: Equipo 22.
@@ -6,6 +8,11 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
+/*
+AUTOR: EQUIPO 22.
+DESCRIPCION: Función main del proyecto, en la que se encuentra la función bienvenida() que da lugar al funcionamiento
+completo del proyecto.
+ */
 fun main() {
-
+    Menu().bienvenida()
 }
