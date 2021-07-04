@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías.">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/TDA/Usuario.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/main.kt" afterDir="false" />
+    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/TDA/listaTareas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/TDA/listaTareas.kt" afterDir="false" />
     </list>
     <list id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="Se agregaron archivos del proyecto que faltaban al repositorio" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625203339486</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea.">
+      <created>1625356517142</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1625356517142</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agregaron archivos del proyecto que faltaban al repositorio" />
     <MESSAGE value="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías." />
-    <option name="LAST_COMMIT_MESSAGE" value="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías." />
+    <MESSAGE value="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea." />
   </component>
 </project>

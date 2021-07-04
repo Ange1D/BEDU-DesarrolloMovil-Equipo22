@@ -96,6 +96,64 @@ class listaTareas {
         }
     }
 
+    fun agregarTarea() {
+        //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
+        usuario.tareasTotales = 0
+        //DESCRIPCION: Petición de datos de la tarea al usuario.
+        println(
+            "---------------------------------------------\n" +
+                    "Agregar tarea:\n"
+        )
+        print("Ingrese el título de la tarea: ");
+        val title = readLine().toString()
+        print("\tIngrese el mes de inicio [MM]: ");
+        val mesInicio = readLine()!!.toInt()
+        print("\tIngrese el dia de inicio [DD]: ");
+        val diaInicio = readLine()!!.toInt()
+        print("\tIngrese la hora de inicio [HH]: ");
+        val horarioInicio = readLine()!!.toInt()
+        print("\tIngrese el mes de finalización [MM]: ");
+        val mesFin = readLine()!!.toInt()
+        print("\tIngrese el dia de finalización [DD]: ");
+        val diaFin = readLine()!!.toInt()
+        print("\tIngrese la hora de finalización [HH]: ");
+        val horarioFin = readLine()!!.toInt()
+        print("\tObjetivo: ")
+        val objetivo = readLine().toString()
+        print("\tDescripcion: ")
+        val descripcion = readLine().toString()
+        print("\tDependencia interna: ")
+        val dependenciaInterna = readLine().toString()
+        print("\tDependencia externa: ")
+        val dependenciaExterna = readLine().toString()
+        print("\tFrecuencia: ")
+        val frecuencia = readLine().toString()
+        print("\tPrioridad [1(Poco urgente) - 10(Muy urgente)]: ")
+        val prioridad = readLine()!!.toInt()
+
+        /*
+        DESCRIPCION: Los datos registrados antes son guardados en un objeto de tipo Tarea. El lapso se calcula de forma
+        automática para que el usuario no necesite ingresar información redundante; además el estado de la tarea se
+        establece automáticamente como Pendiente con un booleano false.
+         */
+        val newTarea = Tarea(
+            title,
+            LocalDateTime.of(2021, mesInicio, diaInicio, horarioInicio, 0, 0),
+            LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0, 0),
+            objetivo, descripcion,
+            calcularLapso(
+                LocalDateTime.of(2021, mesInicio, diaInicio, horarioInicio, 0, 0),
+                LocalDateTime.of(2021, mesFin, diaFin, horarioFin, 0, 0)
+            ),
+            false, dependenciaInterna,
+            dependenciaExterna, frecuencia, prioridad
+        )
+        //DESCRIPCION: La tarea creada anteriormente se agrega al final de la lista de tareas.
+        tareas.add(newTarea)
+        //DESCRIPCION: Las tareas totales del usuario se establecen como el tamaño de la lista de tareas.
+        usuario.tareasTotales = tareas.size
+    }
+
 
     /*
 AUTOR: ANGEL OMAR GOMEZ CASTILLO.
