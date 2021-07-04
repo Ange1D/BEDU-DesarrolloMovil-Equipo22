@@ -247,9 +247,11 @@ class listaTareas {
     DESCRIPCION: En esta función se genera un String que indica el lapso de tiempo que abarcará la tarea. Para ello necesia
     recibir dos argumentos de tipo LocalDateTime: el que indica el inicio y el que indica el fin de la tarea.
      */
-    fun calcularLapso(inicio: LocalDateTime, fin: LocalDateTime): String {
-        return ("Desde $inicio hasta $fin")
-    }
+    //fun calcularLapso(inicio: LocalDateTime, fin: LocalDateTime): String {
+    //   return ("Desde $inicio hasta $fin")
+    //}
+
+    val calcularLapso: (LocalDateTime,LocalDateTime) -> String = {inicio,fin -> "Desde $inicio hasta $fin"}
 
 
 
