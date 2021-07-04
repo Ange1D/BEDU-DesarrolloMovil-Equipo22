@@ -8,17 +8,9 @@
 
 package TDA
 
-/*
-DESCRIPCION: Importación de la bibilioteca LocalDateTime que se utilizará para establecer los horarios de cada tarea.
- */
 import java.time.LocalDateTime
 
-/*
-AUTOR: ANGEL OMAR GOMEZ CASTILLO.
-DESCRIPCION: Se creó una data class llamada Tarea que se utilizará para almacenar los datos de cada tarea que el usuario
-ingrese en la agenda.
- */
-data class Tarea(
+class Tareas (
     var titulo: String,
     var fechaInicio: LocalDateTime,
     var fechaFinalizacion: LocalDateTime,
@@ -30,4 +22,5 @@ data class Tarea(
     var dependenciaExterna: String = "",
     var frecuencia: String = "",
     var prioridad: Int = 0
-)
+) {
+}

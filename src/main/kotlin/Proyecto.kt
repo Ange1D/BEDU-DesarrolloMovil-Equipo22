@@ -5,29 +5,7 @@ NO. DE EQUIPO: 22.
 MODULO: KOTLIN FUNDAMENTALS.
  */
 
-/*
-DESCRIPCION: Importación de la bibilioteca LocalDateTime que se utilizará para establecer los horarios de cada tarea.
- */
-import java.time.LocalDateTime
 
-/*
-AUTOR: ANGEL OMAR GOMEZ CASTILLO.
-DESCRIPCION: Se creó una data class llamada Tarea que se utilizará para almacenar los datos de cada tarea que el usuario
-ingrese en la agenda.
- */
-data class Tarea(
-    var titulo: String,
-    var fechaInicio: LocalDateTime,
-    var fechaFinalizacion: LocalDateTime,
-    var objetivo: String = "",
-    var descripcion: String = "",
-    var lapso: String = "",
-    var estado: Boolean = false,
-    var dependenciaInterna: String = "",
-    var dependenciaExterna: String = "",
-    var frecuencia: String = "",
-    var prioridad: Int = 0
-)
 
 /*
 AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
