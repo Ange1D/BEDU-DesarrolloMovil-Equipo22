@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea.">
+    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Se agregó la funcionalidad de crearTarea a la clase correspondiente">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Proyecto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Proyecto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/S6/R1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/S6/R2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/Sesion1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s2/R1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s2/R2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s2/R3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s3/R1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s3/R2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s3/R3.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s4/R1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s4/R2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s5/R1.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Sesiones/s5/R2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/TDA/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/TDA/Menu.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/TDA/listaTareas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/TDA/listaTareas.kt" afterDir="false" />
     </list>
     <list id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="Se agregaron archivos del proyecto que faltaban al repositorio" />
@@ -44,6 +59,20 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="template.copyright.formatting" />
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="ProyectoGuia_Equipo22.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625356517142</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Se agregó la funcionalidad de crearTarea a la clase correspondiente">
+      <created>1625374273322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625374273322</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +165,7 @@
     <MESSAGE value="Se agregaron archivos del proyecto que faltaban al repositorio" />
     <MESSAGE value="Estructurización de funciones principales&#10;&#10;Cambios realizados:&#10;    1) Se agregaron las funciones principales que conformarán el proyecto &quot;ChronoMaster 2021&quot;, las cuales aún se encuentran vacías." />
     <MESSAGE value="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se creo la clase lista de tareas, métodos y variables; y el inicio de la clase Tarea." />
+    <MESSAGE value="Se agregó la funcionalidad de crearTarea a la clase correspondiente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agregó la funcionalidad de crearTarea a la clase correspondiente" />
   </component>
 </project>

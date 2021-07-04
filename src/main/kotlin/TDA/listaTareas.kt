@@ -32,16 +32,16 @@ class listaTareas {
     */
     fun getTareas() {
         for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}.- \n" +
-                "Título: ${tarea.titulo}\n" +
-                "Fecha de inicio: ${tarea.fechaInicio}\n" +
-                "Fecha final: ${tarea.fechaFinalizacion}\n" +
-                "Objetivo: ${tarea.objetivo}\n" +
-                "Descripción: ${tarea.descripcion}\n" +
-                "Lapso: ${tarea.lapso}" +
-                "Dependencia Interna: ${tarea.dependenciaInterna}\n" +
-                "Dependencia Externa: ${tarea.dependenciaExterna}\n" +
-                "Frecuencia: ${tarea.frecuencia}\n" +
-                "Prioridad: ${tarea.prioridad}\n"
+                "\tTítulo: ${tarea.titulo}\n" +
+                "\tFecha de inicio: ${tarea.fechaInicio}\n" +
+                "\tFecha final: ${tarea.fechaFinalizacion}\n" +
+                "\tObjetivo: ${tarea.objetivo}\n" +
+                "\tDescripción: ${tarea.descripcion}\n" +
+                "\tLapso: ${tarea.lapso}" +
+                "\tDependencia Interna: ${tarea.dependenciaInterna}\n" +
+                "\tDependencia Externa: ${tarea.dependenciaExterna}\n" +
+                "\tFrecuencia: ${tarea.frecuencia}\n" +
+                "\tPrioridad: ${tarea.prioridad}\n"
         )
     }
 
@@ -104,7 +104,7 @@ class listaTareas {
             "---------------------------------------------\n" +
                     "Agregar tarea:\n"
         )
-        print("Ingrese el título de la tarea: ");
+        print("\tIngrese el título de la tarea: ");
         val title = readLine().toString()
         print("\tIngrese el mes de inicio [MM]: ");
         val mesInicio = readLine()!!.toInt()
@@ -192,17 +192,17 @@ pendientes.
             val diaFin = readLine()!!.toInt()
             print("\tIngrese la hora de finalización [HH]: ");
             val horarioFin = readLine()!!.toInt()
-            print("Objetivo: ")
+            print("\tObjetivo: ")
             val objetivo = readLine().toString()
-            print("Descripcion: ")
+            print("\tDescripcion: ")
             val descripcion = readLine().toString()
             //DESCRIPCION: En esta ocasión sí se le solicita el estado de la tarea: Pendiente(false) o Finalizada(true)
-            print("Estado de la tarea [Pendiente/Finalizada]: ")
+            print("\tEstado de la tarea [Pendiente/Finalizada]: ")
             val estadoLectura = readLine().toString()
             val estadoBoolean = estadoLectura.equals("Finalizada", true)
-            print("dependenciaInterna: ")
+            print("\tdependenciaInterna: ")
             val dependenciaInterna = readLine().toString()
-            print("dependenciaExterna: ")
+            print("\tdependenciaExterna: ")
             val dependenciaExterna = readLine().toString()
             print("frecuencia: ")
             val frecuencia = readLine().toString()
