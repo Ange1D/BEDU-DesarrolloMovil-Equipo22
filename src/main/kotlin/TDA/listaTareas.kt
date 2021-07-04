@@ -96,6 +96,11 @@ class listaTareas {
         }
     }
 
+    /*
+    AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
+    DESCRIPCION: En esta función se registrarán los datos de una tarea para agregarla a la lista de tareas pendientes.
+    */
+
     fun agregarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
         usuario.tareasTotales = 0
@@ -156,10 +161,10 @@ class listaTareas {
 
 
     /*
-AUTOR: ANGEL OMAR GOMEZ CASTILLO.
-DESCRIPCION: En esta función se registrarán los datos de una tarea ya existente para editarla en la lista de tareas
-pendientes.
- */
+    AUTOR: ANGEL OMAR GOMEZ CASTILLO.
+    DESCRIPCION: En esta función se registrarán los datos de una tarea ya existente para editarla en la lista de tareas
+    pendientes.
+    */
     fun editarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
         usuario.tareasTotales = 0
@@ -245,5 +250,83 @@ pendientes.
     fun calcularLapso(inicio: LocalDateTime, fin: LocalDateTime): String {
         return ("Desde $inicio hasta $fin")
     }
+
+
+
+    /*
+    AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
+    DESCRIPCION: En esta función se revisará si los horarios de alguna tarea entran en conflicto con los de otra.
+    */
+    fun revisarConflictos() {
+    //DESCRIPCION: Set mutable que almacenará los mensajes de conflicto.
+    val setConflictos = mutableSetOf<String>()
+    println(
+        "---------------------------------------------\n" +
+                "Revisión de conflictos:\n"
+    )
+
+    /*
+    DESCRIPCION: Se utiliza un primer ciclo for para asegurarnos de revisar cada tarea. Se optó por un for que utiliza
+    la función WithIndex() de la lista.
+     */
+    for ((i, horarioComparando) in tareas.withIndex()) {
+        /*
+        DESCRIPCION: Se utiliza un segundo ciclo for para asegurarnos de comparar la tarea del ciclo anterios con cada
+        tarea de la lista. Se optó por un for que utiliza la función WithIndex() de la lista.
+         */
+        for ((j, horarioComparador) in tareas.withIndex()) {
+            /*
+            DESCRIPCION: Se utiliza un condicional para evitar que una tarea se compare consigo misma, pues esto
+            generaría un falso conflicto.
+             */
+            if (i != j) {
+                /*
+                DESCRIPCION: Se comparan ahora los horarios de inicio y fin de cada una de las tareas, si el horario de
+                la tarea que se estácomparando contiene el horario de la otra se agrega el mensaje de conflicto al set
+                de conflictos declarado anteriormente.
+                 */
+                if (horarioComparando.fechaInicio.toString().contains(horarioComparador.fechaInicio.toString()) ||
+                    horarioComparando.fechaFinalizacion.toString()
+                        .contains(horarioComparador.fechaFinalizacion.toString())
+                ) {
+                    setConflictos.add(
+                        "La tarea ${tareas[i]}, con horario: ${horarioComparando.fechaInicio} - ${horarioComparando.fechaFinalizacion}\n" +
+                                "entra en conflicto con la tarea ${tareas[j]}, con horario: ${horarioComparador.fechaInicio} - ${horarioComparador.fechaFinalizacion}.\n" +
+                                "Es necesario editar alguna de las dos."
+                    )
+                }
+            }
+        }
+    }
+
+    /*
+    DESCRIPCION: Si el set de conflictos no se encuentra vacío nos enlistará cada uno de los conflictos encontrados, de
+    lo contrario nos mostrará un mensaje avisándonos que no se encontró ningún conflicto.
+     */
+    if (!setConflictos.isEmpty())
+        for ((i, elemento) in setConflictos.withIndex())
+            println("  ${i + 1}) $elemento\n")
+    else
+        println("No se encontraron conflictos")
+    }
+
+    /*
+    AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
+    DESCRIPCION: En esta función se mostrarán los datos del usuario, con el objetivo de que pueda revisar cuántas tareas
+    tiene aún pendientes.
+    */
+    fun resumenUsuario() {
+    println(
+        "---------------------------------------------\n" +
+                "Resumen del usuario:\n"
+    )
+    println(
+        "\tNombre de usuario: ${usuario.nombre}.\n" +
+                "\tTareas totales: ${usuario.tareasTotales}.\n" +
+                "\tTareas finalizadas: ${usuario.tareasRealizadas}.\n" +
+                "\n\tTareas pendientes: ${usuario.tareasTotales - usuario.tareasRealizadas}"
+    )
+    }
+
 
 }

@@ -88,8 +88,8 @@ que contiene esta agenda.
             } else {
                 when (op) {
                     1 -> listaTareas().visualizarPrograma()
-                    //2 -> listaTareas().revisarConflictos()
-                    //3 -> listaTareas().resumenUsuario()
+                    2 -> listaTareas().revisarConflictos()
+                    3 -> listaTareas().resumenUsuario()
                     4 -> listaTareas().agregarTarea()
                     5 -> listaTareas().editarTarea()
                     6 -> listaTareas().eliminarTarea()

@@ -8,6 +8,13 @@
 
 package TDA
 
+/*
+AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.
+DESCRIPCION: Se creó una clase llamada Usuario que servirá para almacenar los datos del usuario y la funcionalidad de
+loggin, tanto para los datos de prueba que se estarán utilizando durante este proyecto guía, así como los datos de más
+usuarios, pensando en la escalabilidad del proyecto.
+*/
+
 class Usuario(var nombre: String, var contrasenna: String, var tareasTotales: Int = 0, var tareasRealizadas: Int = 0) {
     //DESCRIPCION: init que mostrará los datos de inicio de sesión del usuario.
     init {
@@ -23,18 +30,4 @@ class Usuario(var nombre: String, var contrasenna: String, var tareasTotales: In
         return nombre.equals(this.nombre) && contrasenna.equals(this.contrasenna)
     }
 
-    //DESCRIPCION: En esta función se mostrarán los datos del usuario, con el objetivo de que pueda revisar cuántas tareas
-    //tiene aún pendientes.
-    fun resumenUsuario() {
-        println(
-            "---------------------------------------------\n" +
-                    "Resumen del usuario:\n"
-        )
-        println(
-            "\tNombre de usuario: ${this.nombre}.\n" +
-                    "\tTareas totales: ${this.tareasTotales}.\n" +
-                    "\tTareas finalizadas: ${this.tareasRealizadas}.\n" +
-                    "\n\tTareas pendientes: ${this.tareasTotales - this.tareasRealizadas}"
-        )
-    }
 }
