@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package TDA
+package Proyecto
 
 /*
 DESCRIPCION: Importación de la bibilioteca LocalDateTime que se utilizará para establecer los horarios de cada tarea.
@@ -23,14 +23,14 @@ sección para poder accederlas desde cualquier función del proyecto.
 val tareas = mutableListOf<Tarea>()
 val usuario: Usuario = Usuario("Usuario de prueba", "contraseña_de_prueba")
 
-class listaTareas {
+class ListaTareas {
 
     /*
     AUTOR: JOSE BERNAL FONSECA.
     DESCRIPCION: En esta función se utiliza un for con la función WithIndex() de la lista de tareas para generar un listado
     con el índice y el título de las tareas que contiene la lista.
     */
-    fun getTareas() {
+    fun imprimirTareas() {
         for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}.- \n" +
                 "\tTítulo: ${tarea.titulo}\n" +
                 "\tFecha de inicio: ${tarea.fechaInicio}\n" +
@@ -62,11 +62,11 @@ class listaTareas {
         if (tareas.isEmpty()) {
             println("No hay ninguna tarea")
         } else {
-            getTareas()
+            imprimirTareas()
             print("Escriba el número de la tarea que desea borrar: ")
             val delTarea = readLine()?.toInt()
             tareas.removeAt(delTarea!!.minus(1))
-            getTareas()
+            imprimirTareas()
         }
 
         //DESCRIPCION: Las tareas totales del usuario se establecen como el tamaño de la lista de tareas.
@@ -92,7 +92,7 @@ class listaTareas {
         if (tareas.isEmpty()) {
             println("No hay ninguna tarea.")
         } else {
-            getTareas()
+            imprimirTareas()
         }
     }
 
@@ -179,7 +179,7 @@ class listaTareas {
             println("No hay ninguna tarea.")
         } else {
             //DESCRIPCION: Se muestran las tareas que existen para que el usuario seleccione la que desea editar.
-            getTareas()
+            imprimirTareas()
             //DESCRIPCION: Se le solicita al usuario el número de tarea a editar.
             print("Numero de tarea a editar: ")
             val tareaIndice = readLine()!!.toInt()
@@ -247,9 +247,6 @@ class listaTareas {
     DESCRIPCION: En esta función se genera un String que indica el lapso de tiempo que abarcará la tarea. Para ello necesia
     recibir dos argumentos de tipo LocalDateTime: el que indica el inicio y el que indica el fin de la tarea.
      */
-    //fun calcularLapso(inicio: LocalDateTime, fin: LocalDateTime): String {
-    //   return ("Desde $inicio hasta $fin")
-    //}
 
     val calcularLapso: (LocalDateTime,LocalDateTime) -> String = {inicio,fin -> "Desde $inicio hasta $fin"}
 

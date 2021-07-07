@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package TDA
+package Proyecto
 
 /*
 AUTOR: BRAULIO DAVID HERNANDEZ PALAGOT.

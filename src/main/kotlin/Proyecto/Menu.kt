@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package TDA
+package Proyecto
 
 class Menu {
     /*
@@ -79,7 +79,7 @@ que contiene esta agenda.
              */
             if (tareas.isEmpty()) {
                 when (op) {
-                    1 -> listaTareas().agregarTarea()
+                    1 -> ListaTareas().agregarTarea()
                     2 -> {
                         op = 7
                         print("Hasta la próxima, ${usuario.nombre}.")
@@ -87,12 +87,12 @@ que contiene esta agenda.
                 }
             } else {
                 when (op) {
-                    1 -> listaTareas().visualizarPrograma()
-                    2 -> listaTareas().revisarConflictos()
-                    3 -> listaTareas().resumenUsuario()
-                    4 -> listaTareas().agregarTarea()
-                    5 -> listaTareas().editarTarea()
-                    6 -> listaTareas().eliminarTarea()
+                    1 -> ListaTareas().visualizarPrograma()
+                    2 -> ListaTareas().revisarConflictos()
+                    3 -> ListaTareas().resumenUsuario()
+                    4 -> ListaTareas().agregarTarea()
+                    5 -> ListaTareas().editarTarea()
+                    6 -> ListaTareas().eliminarTarea()
                     7 -> print("Hasta la próxima, ${usuario.nombre}.")
                     else -> {
                         println("Opción no valida, inténtelo de nuevo...")
