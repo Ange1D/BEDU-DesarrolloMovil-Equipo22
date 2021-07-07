@@ -8,10 +8,5 @@
 
 package Proyecto
 
-//Clase para validar los valores ingresados
-
 class Validaciones {
-
-
-
 }
