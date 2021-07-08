@@ -37,7 +37,7 @@ class ListaTareas {
                 "\tFecha final: ${tarea.fechaFinalizacion}\n" +
                 "\tObjetivo: ${tarea.objetivo}\n" +
                 "\tDescripción: ${tarea.descripcion}\n" +
-                "\tLapso: ${tarea.lapso}" +
+                "\tLapso: ${tarea.lapso}\n" +
                 "\tDependencia Interna: ${tarea.dependenciaInterna}\n" +
                 "\tDependencia Externa: ${tarea.dependenciaExterna}\n" +
                 "\tFrecuencia: ${tarea.frecuencia}\n" +
@@ -109,32 +109,20 @@ class ListaTareas {
             "---------------------------------------------\n" +
                     "Agregar tarea:\n"
         )
-        print("\tIngrese el título de la tarea: ");
-        val title = readLine().toString()
-        print("\tIngrese el mes de inicio [MM]: ");
-        val mesInicio = readLine()!!.toInt()
-        print("\tIngrese el dia de inicio [DD]: ");
-        val diaInicio = readLine()!!.toInt()
-        print("\tIngrese la hora de inicio [HH]: ");
-        val horarioInicio = readLine()!!.toInt()
-        print("\tIngrese el mes de finalización [MM]: ");
-        val mesFin = readLine()!!.toInt()
-        print("\tIngrese el dia de finalización [DD]: ");
-        val diaFin = readLine()!!.toInt()
-        print("\tIngrese la hora de finalización [HH]: ");
-        val horarioFin = readLine()!!.toInt()
-        print("\tObjetivo: ")
-        val objetivo = readLine().toString()
-        print("\tDescripcion: ")
-        val descripcion = readLine().toString()
-        print("\tDependencia interna: ")
-        val dependenciaInterna = readLine().toString()
-        print("\tDependencia externa: ")
-        val dependenciaExterna = readLine().toString()
-        print("\tFrecuencia: ")
-        val frecuencia = readLine().toString()
-        print("\tPrioridad [1(Poco urgente) - 10(Muy urgente)]: ")
-        val prioridad = readLine()!!.toInt()
+
+        val title = Validaciones().texto("Ingrese el título de la tarea: ")
+        val mesInicio = Validaciones().entero("Ingrese el mes de inicio [MM]: ")
+        val diaInicio = Validaciones().entero("Ingrese el dia de inicio [DD]: ")
+        val horarioInicio = Validaciones().entero("Ingrese la hora de inicio [HH]: ")
+        val mesFin = Validaciones().entero("Ingrese el mes de finalización [MM]: ")
+        val diaFin = Validaciones().entero("Ingrese el dia de finalización [DD]: ")
+        val horarioFin = Validaciones().entero("Ingrese la hora de finalización [HH]: ")
+        val objetivo = Validaciones().texto("Objetivo: ")
+        val descripcion = Validaciones().texto("Descripcion: ")
+        val dependenciaInterna = Validaciones().texto("Dependencia interna: ")
+        val dependenciaExterna = Validaciones().texto("Dependencia externa: ")
+        val frecuencia = Validaciones().texto("Frecuencia: ")
+        val prioridad = Validaciones().entero("Prioridad [1(Poco urgente) - 10(Muy urgente)]: ")
 
         /*
         DESCRIPCION: Los datos registrados antes son guardados en un objeto de tipo Tarea. El lapso se calcula de forma
