@@ -181,38 +181,23 @@ class ListaTareas {
             //DESCRIPCION: Se muestran las tareas que existen para que el usuario seleccione la que desea editar.
             imprimirTareas()
             //DESCRIPCION: Se le solicita al usuario el número de tarea a editar.
-            print("Numero de tarea a editar: ")
-            val tareaIndice = readLine()!!.toInt()
-            print("\n\tEscribe el nuevo título para la tarea: ")
-            val tareaEdit = readLine().toString()
-            print("\tIngrese el mes de inicio [MM]: ");
-            val mesInicio = readLine()!!.toInt()
-            print("\tIngrese el dia de inicio [DD]: ");
-            val diaInicio = readLine()!!.toInt()
-            print("\tIngrese la hora de inicio [HH]: ");
-            val horarioInicio = readLine()!!.toInt()
-            print("\tIngrese el mes de finalización [MM]: ");
-            val mesFin = readLine()!!.toInt()
-            print("\tIngrese el dia de finalización [DD]: ");
-            val diaFin = readLine()!!.toInt()
-            print("\tIngrese la hora de finalización [HH]: ");
-            val horarioFin = readLine()!!.toInt()
-            print("\tObjetivo: ")
-            val objetivo = readLine().toString()
-            print("\tDescripcion: ")
-            val descripcion = readLine().toString()
+            val tareaIndice = Validaciones().entero("Numero de tarea a editar: ")
+            val tareaEdit = Validaciones().texto("Escribe el nuevo título para la tarea: ")
+            val mesInicio = Validaciones().entero("Ingrese el mes de inicio [MM]: ")
+            val diaInicio = Validaciones().entero("Ingrese el dia de inicio [DD]: ")
+            val horarioInicio = Validaciones().entero("Ingrese la hora de inicio [HH]: ")
+            val mesFin = Validaciones().entero("Ingrese el mes de finalización [MM]: ")
+            val diaFin = Validaciones().entero("Ingrese el dia de finalización [DD]: ")
+            val horarioFin = Validaciones().entero("Ingrese la hora de finalización [HH]: ")
+            val objetivo = Validaciones().texto("Objetivo: ")
+            val descripcion = Validaciones().texto("Descripcion: ")
             //DESCRIPCION: En esta ocasión sí se le solicita el estado de la tarea: Pendiente(false) o Finalizada(true)
-            print("\tEstado de la tarea [Pendiente/Finalizada]: ")
-            val estadoLectura = readLine().toString()
+            val estadoLectura = Validaciones().texto("Estado de la tarea [Pendiente/Finalizada]: ")
             val estadoBoolean = estadoLectura.equals("Finalizada", true)
-            print("\tdependenciaInterna: ")
-            val dependenciaInterna = readLine().toString()
-            print("\tdependenciaExterna: ")
-            val dependenciaExterna = readLine().toString()
-            print("frecuencia: ")
-            val frecuencia = readLine().toString()
-            print("\tPrioridad [1(Poco urgente) - 10(Muy urgente)]: ")
-            val prioridad = readLine()!!.toInt()
+            val dependenciaInterna = Validaciones().texto("dependenciaInterna: ")
+            val dependenciaExterna = Validaciones().texto("dependenciaExterna: ")
+            val frecuencia = Validaciones().texto("frecuencia: ")
+            val prioridad = Validaciones().entero("Prioridad [1(Poco urgente) - 10(Muy urgente)]: ")
 
             /*
             DESCRIPCION: Los datos registrados antes son guardados en un objeto de tipo Tarea. El lapso se calcula de forma

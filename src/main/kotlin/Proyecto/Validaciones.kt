@@ -9,15 +9,22 @@
 package Proyecto
 
 class Validaciones {
-    fun Entero(Mensaje:String):Int{
+    fun entero(Mensaje:String):Int{
         return try {
-            println(Mensaje)
+            print("\t $Mensaje")
             //Si es null vuelve a llamar a la funcion
-            return Integer.valueOf(readLine()) ?: Entero(Mensaje)
+            return Integer.valueOf(readLine()) ?: entero(Mensaje)
         } catch (e: Exception) {
             //Si no es entero vulve a llamar a la funcion
             println("No es un numero valido")
-            Entero(Mensaje)
+            entero(Mensaje)
         }
+    }
+
+    fun texto(Mensaje:String):String{
+            print("\t $Mensaje")
+            //Si es null vuelve a llamar a la funcion
+            return readLine()?.ifBlank { null } ?: texto("\nNo puede dejar el campo vacio $Mensaje")
+
     }
 }
