@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package Proyecto
+package proyecto
 
 /*
 DESCRIPCION: Importación de la bibilioteca LocalDateTime que se utilizará para establecer los horarios de cada tarea.
@@ -21,7 +21,7 @@ sección para poder accederlas desde cualquier función del proyecto.
     proyecto guía.
  */
 val tareas = mutableListOf<Tarea>()
-val usuario: Usuario = Usuario("Usuario de prueba", "contraseña_de_prueba")
+var usuario: Usuario? = null
 
 class ListaTareas {
 
@@ -30,8 +30,8 @@ class ListaTareas {
     DESCRIPCION: En esta función se utiliza un for con la función WithIndex() de la lista de tareas para generar un listado
     con el índice y el título de las tareas que contiene la lista.
     */
-    fun imprimirTareas() {
-        for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}.- \n" +
+    private fun imprimirTareas() {
+        for ((i, tarea) in tareas.withIndex()) println("\t${i + 1}) \n" +
                 "\tTítulo: ${tarea.titulo}\n" +
                 "\tFecha de inicio: ${tarea.fechaInicio}\n" +
                 "\tFecha final: ${tarea.fechaFinalizacion}\n" +
@@ -41,7 +41,8 @@ class ListaTareas {
                 "\tDependencia Interna: ${tarea.dependenciaInterna}\n" +
                 "\tDependencia Externa: ${tarea.dependenciaExterna}\n" +
                 "\tFrecuencia: ${tarea.frecuencia}\n" +
-                "\tPrioridad: ${tarea.prioridad}\n"
+                "\tPrioridad: ${tarea.prioridad}\n" +
+                "\tEstado: ${if (tarea.estado) "Finalizada" else "Pendiente"}"
         )
     }
 
@@ -52,9 +53,9 @@ class ListaTareas {
 
     fun eliminarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
-        usuario.tareasTotales = 0
+        usuario!!.tareasTotales = 0
         //DESCRIPCION: Las tareas realizadas del usuario se establecen en cero para contarlas al terminar de editar la tarea.
-        usuario.tareasRealizadas
+        usuario!!.tareasRealizadas
         println(
             "---------------------------------------------\n" +
                     "Eliminar tarea:\n"
@@ -70,11 +71,11 @@ class ListaTareas {
         }
 
         //DESCRIPCION: Las tareas totales del usuario se establecen como el tamaño de la lista de tareas.
-        usuario.tareasTotales = tareas.size
+        usuario!!.tareasTotales = tareas.size
         //DESCRIPCION: Mediante un for y un if se contabilizan las tareas cuyo estado sea Finalizada(true)
         for (tarea in tareas) {
             if (tarea.estado)
-                usuario.tareasRealizadas++
+                usuario!!.tareasRealizadas++
         }
     }
 
@@ -103,7 +104,7 @@ class ListaTareas {
 
     fun agregarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
-        usuario.tareasTotales = 0
+        usuario!!.tareasTotales = 0
         //DESCRIPCION: Petición de datos de la tarea al usuario.
         println(
             "---------------------------------------------\n" +
@@ -144,7 +145,7 @@ class ListaTareas {
         //DESCRIPCION: La tarea creada anteriormente se agrega al final de la lista de tareas.
         tareas.add(newTarea)
         //DESCRIPCION: Las tareas totales del usuario se establecen como el tamaño de la lista de tareas.
-        usuario.tareasTotales = tareas.size
+        usuario!!.tareasTotales = tareas.size
     }
 
 
@@ -155,9 +156,9 @@ class ListaTareas {
     */
     fun editarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
-        usuario.tareasTotales = 0
+        usuario!!.tareasTotales = 0
         //DESCRIPCION: Las tareas realizadas del usuario se establecen en cero para contarlas al terminar de editar la tarea.
-        usuario.tareasRealizadas
+        usuario!!.tareasRealizadas = 0
         println(
             "---------------------------------------------\n" +
                     "Editar tarea:\n"
@@ -205,13 +206,15 @@ class ListaTareas {
                 dependenciaExterna, frecuencia, prioridad
             )
             //DESCRIPCION: La tarea creada anteriormente se guarda en el índice de la tarea que se está ediando.
-            tareas.set(tareaIndice.minus(1), editTarea)
+            tareas[tareaIndice.minus(1)] = editTarea
             println("Tarea editada satisfactoriamente.")
             //DESCRIPCION: Mediante un for y un if se contabilizan las tareas cuyo estado sea Finalizada(true)
             for (tarea in tareas) {
                 if (tarea.estado)
-                    usuario.tareasRealizadas++
+                    usuario!!.tareasRealizadas++
             }
+            //DESCRIPCION: Las tareas totales se vuelven a establecer como el tamaño de la lista de tareas.
+            usuario!!.tareasTotales = tareas.size
         }
     }
 
@@ -275,7 +278,7 @@ class ListaTareas {
     DESCRIPCION: Si el set de conflictos no se encuentra vacío nos enlistará cada uno de los conflictos encontrados, de
     lo contrario nos mostrará un mensaje avisándonos que no se encontró ningún conflicto.
      */
-    if (!setConflictos.isEmpty())
+    if (setConflictos.isNotEmpty())
         for ((i, elemento) in setConflictos.withIndex())
             println("  ${i + 1}) $elemento\n")
     else
@@ -293,10 +296,10 @@ class ListaTareas {
                 "Resumen del usuario:\n"
     )
     println(
-        "\tNombre de usuario: ${usuario.nombre}.\n" +
-                "\tTareas totales: ${usuario.tareasTotales}.\n" +
-                "\tTareas finalizadas: ${usuario.tareasRealizadas}.\n" +
-                "\n\tTareas pendientes: ${usuario.tareasTotales - usuario.tareasRealizadas}"
+        "\tNombre de usuario: ${usuario!!.nombre}.\n" +
+                "\tTareas totales: ${usuario!!.tareasTotales}.\n" +
+                "\tTareas finalizadas: ${usuario!!.tareasRealizadas}.\n" +
+                "\n\tTareas pendientes: ${usuario!!.tareasTotales - usuario!!.tareasRealizadas}"
     )
     }
 

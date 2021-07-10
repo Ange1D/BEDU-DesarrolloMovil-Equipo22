@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package Proyecto
+package proyecto
 
 /*
 DESCRIPCION: Importación de la bibilioteca LocalDateTime que se utilizará para establecer los horarios de cada tarea.

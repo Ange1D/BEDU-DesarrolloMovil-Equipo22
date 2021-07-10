@@ -6,7 +6,7 @@
  * @Project: Proyecto Guía: ChronoMaster 2021.
  */
 
-package Proyecto
+package proyecto
 
 class Validaciones {
     fun entero(Mensaje: String): Int {
@@ -31,7 +31,6 @@ class Validaciones {
     fun enRango(Mensaje: String, minVal: Int, maxVal: Int): Int {
         //Se realiza la comprobación de que se introduzca un entero
         val lectura = entero(Mensaje)
-        var retorno = 0
         //Se revisa que el entero leído se encuentre en el rango correcto
         return if (lectura in minVal..maxVal)
             lectura
