@@ -78,17 +78,13 @@ que contiene esta agenda.
 //        println("\nBienvenido a tu agenda, ${usuario.nombre}.")
 
         var op: Int
-        var inputNombre: String
-        var inputContrasenna: String
         do{
             print(
                 "---------------------------------------------\n" +
                         "Iniciar sesión:\n"
             )
-            print("\tIngrese el nombre de usuario: ")
-            inputNombre = readLine().toString()
-            print("\tIngrese la contraseña: ")
-            inputContrasenna = readLine().toString()
+            val inputNombre = Validaciones().texto("\tIngrese el nombre de usuario: ")
+            val inputContrasenna = Validaciones().texto("\tInrese la contraseña: ")
             try {
                 println("Iniciando recuperación de usuario")
                 usuario = fetchUserCoroutine(inputNombre, inputContrasenna)
@@ -127,8 +123,7 @@ que contiene esta agenda.
                 }
 
                 //DESCRIPCION: Lectura de la opción seleccionada por el usuario.
-                print("Seleccione una opcion: ")
-                op = readLine()!!.toInt()
+                op = Validaciones().entero("Selecciones una opción: ")
 
                 /*
                 DESCRIPCION: Condición para revisar qué menú se utilizará en el condicional when que controla el menú

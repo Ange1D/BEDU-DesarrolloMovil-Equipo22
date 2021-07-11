@@ -65,8 +65,8 @@ class ListaTareas {
         } else {
             imprimirTareas()
             print("Escriba el número de la tarea que desea borrar: ")
-            val delTarea = readLine()?.toInt()
-            tareas.removeAt(delTarea!!.minus(1))
+            val delTarea = Validaciones().enRango("Escriba el número de la tarea que desea borrar: ", 0, (tareas.size-1))
+            tareas.removeAt(delTarea.minus(1))
             imprimirTareas()
         }
 
@@ -120,8 +120,8 @@ class ListaTareas {
         val horarioFin = Validaciones().enRango("Ingrese la hora de finalización [HH]: ", 0, 24)
         val objetivo = Validaciones().texto("Objetivo: ")
         val descripcion = Validaciones().texto("Descripcion: ")
-        val dependenciaInterna = Validaciones().texto("Requisitos internos: ")
-        val dependenciaExterna = Validaciones().texto("Dependencia con otra tarea: ")
+        val dependenciaInterna = Validaciones().texto("Requisitos para considerar la tarea \"Finalizada\": ")
+        val dependenciaExterna = Validaciones().texto("Si es necesario completar otra tarea antes de iniciar ésta, indique su nombre: ")
         val frecuencia = Validaciones().texto("Frecuencia: ")
         val prioridad = Validaciones().enRango("Prioridad [1(Poco urgente) - 10(Muy urgente)]: ", 1, 10)
 
@@ -170,7 +170,7 @@ class ListaTareas {
             //DESCRIPCION: Se muestran las tareas que existen para que el usuario seleccione la que desea editar.
             imprimirTareas()
             //DESCRIPCION: Se le solicita al usuario el número de tarea a editar.
-            val tareaIndice = Validaciones().entero("Numero de tarea a editar: ")
+            val tareaIndice = Validaciones().enRango("Numero de tarea a editar: ", 0, (tareas.size-1))
             val tareaEdit = Validaciones().texto("Escribe el nuevo título para la tarea: ")
             val mesInicio = Validaciones().enRango("Ingrese el mes de inicio [MM]: ", 1, 12)
             val diaInicio = Validaciones().enRango("Ingrese el dia de inicio [DD]: ", 1, 31)
