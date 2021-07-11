@@ -40,4 +40,17 @@ class Validaciones {
             enRango(Mensaje, minVal, maxVal)
         }
     }
+
+    fun enRangoTexto(Mensaje: String, op1: String, op2: String): String {
+        //Se realiza la comprobación de que se introduzca un texto
+        val lectura = texto(Mensaje)
+        //Se revisa que el texto leído se encuentre en las opciones
+        return if (lectura == op1  || lectura == op2)
+            lectura
+        else {
+            //Si no está en el rango correcto, se vuelve a llamar a la función
+            println("El dato no se encuentra en el rango establecido.")
+            enRangoTexto(Mensaje, op1, op2)
+        }
+    }
 }

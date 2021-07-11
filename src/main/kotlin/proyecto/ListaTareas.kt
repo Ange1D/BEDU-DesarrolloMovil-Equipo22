@@ -64,8 +64,7 @@ class ListaTareas {
             println("No hay ninguna tarea")
         } else {
             imprimirTareas()
-            print("Escriba el número de la tarea que desea borrar: ")
-            val delTarea = Validaciones().enRango("Escriba el número de la tarea que desea borrar: ", 0, (tareas.size-1))
+            val delTarea = Validaciones().enRango("Escriba el número de la tarea que desea borrar: ", 0, tareas.size)
             tareas.removeAt(delTarea.minus(1))
             imprimirTareas()
         }
@@ -114,10 +113,10 @@ class ListaTareas {
         val title = Validaciones().texto("Ingrese el título de la tarea: ")
         val mesInicio = Validaciones().enRango("Ingrese el mes de inicio [MM]: ", 1, 12)
         val diaInicio = Validaciones().enRango("Ingrese el dia de inicio [DD]: ", 1, 31)
-        val horarioInicio = Validaciones().enRango("Ingrese la hora de inicio [HH]: ", 0, 24)
+        val horarioInicio = Validaciones().enRango("Ingrese la hora de inicio [HH]: ", 1, 24)
         val mesFin = Validaciones().enRango("Ingrese el mes de finalización [MM]: ", 1, 12)
         val diaFin = Validaciones().enRango("Ingrese el dia de finalización [DD]: ", 1, 31)
-        val horarioFin = Validaciones().enRango("Ingrese la hora de finalización [HH]: ", 0, 24)
+        val horarioFin = Validaciones().enRango("Ingrese la hora de finalización [HH]: ", 1, 24)
         val objetivo = Validaciones().texto("Objetivo: ")
         val descripcion = Validaciones().texto("Descripcion: ")
         val dependenciaInterna = Validaciones().texto("Requisitos para considerar la tarea \"Finalizada\": ")
@@ -170,7 +169,7 @@ class ListaTareas {
             //DESCRIPCION: Se muestran las tareas que existen para que el usuario seleccione la que desea editar.
             imprimirTareas()
             //DESCRIPCION: Se le solicita al usuario el número de tarea a editar.
-            val tareaIndice = Validaciones().enRango("Numero de tarea a editar: ", 0, (tareas.size-1))
+            val tareaIndice = Validaciones().enRango("Numero de tarea a editar: ", 0, tareas.size)
             val tareaEdit = Validaciones().texto("Escribe el nuevo título para la tarea: ")
             val mesInicio = Validaciones().enRango("Ingrese el mes de inicio [MM]: ", 1, 12)
             val diaInicio = Validaciones().enRango("Ingrese el dia de inicio [DD]: ", 1, 31)
@@ -181,10 +180,10 @@ class ListaTareas {
             val objetivo = Validaciones().texto("Objetivo: ")
             val descripcion = Validaciones().texto("Descripcion: ")
             //DESCRIPCION: En esta ocasión sí se le solicita el estado de la tarea: Pendiente(false) o Finalizada(true)
-            val estadoLectura = Validaciones().texto("Estado de la tarea [Pendiente/Finalizada]: ")
+            val estadoLectura = Validaciones().enRangoTexto("Estado de la tarea [Pendiente/Finalizada]: ", "Pendiente", "Finalizada")
             val estadoBoolean = estadoLectura.equals("Finalizada", true)
-            val dependenciaInterna = Validaciones().texto("dependenciaInterna: ")
-            val dependenciaExterna = Validaciones().texto("dependenciaExterna: ")
+            val dependenciaInterna = Validaciones().texto("Requisitos para considerar la tarea \"Finalizada\": ")
+            val dependenciaExterna = Validaciones().texto("Si es necesario completar otra tarea antes de iniciar ésta, indique su nombre: ")
             val frecuencia = Validaciones().texto("frecuencia: ")
             val prioridad = Validaciones().entero("Prioridad [1(Poco urgente) - 10(Muy urgente)]: ")
 
@@ -265,8 +264,8 @@ class ListaTareas {
                         .contains(horarioComparador.fechaFinalizacion.toString())
                 ) {
                     setConflictos.add(
-                        "La tarea ${tareas[i]}, con horario: ${horarioComparando.fechaInicio} - ${horarioComparando.fechaFinalizacion}\n" +
-                                "entra en conflicto con la tarea ${tareas[j]}, con horario: ${horarioComparador.fechaInicio} - ${horarioComparador.fechaFinalizacion}.\n" +
+                        "La tarea ${tareas[i].titulo}, con horario: ${horarioComparando.fechaInicio} - ${horarioComparando.fechaFinalizacion}\n" +
+                                "entra en conflicto con la tarea ${tareas[j].titulo}, con horario: ${horarioComparador.fechaInicio} - ${horarioComparador.fechaFinalizacion}.\n" +
                                 "Es necesario editar alguna de las dos."
                     )
                 }
