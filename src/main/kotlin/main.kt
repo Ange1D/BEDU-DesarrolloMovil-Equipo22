@@ -12,6 +12,10 @@ import proyecto.Menu
 AUTOR: EQUIPO 22.
 DESCRIPCION: Función main del proyecto, en la que se encuentra la función bienvenida() que da lugar al funcionamiento
 completo del proyecto.
+
+Las credenciales de inicio de sesión son las siguientes:
+Usuario: BEDU
+Contraseña: BEDU_EQUIPO_22
  */
 fun main() {
     Menu().bienvenida()
