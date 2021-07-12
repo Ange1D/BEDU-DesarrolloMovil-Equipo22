@@ -54,29 +54,6 @@ que contiene esta agenda.
     }
 
     fun bienvenida() = runBlocking {
-//        //DESCRIPCION: Variables para leer los datos del usuario y para controlar la opción del menú que se ha seleccionado.
-//        var op = 0
-//        var inputNombre = ""
-//        var inputContrasenna = ""
-//
-//        /*
-//        DESCRIPCION: El proceso de inicio de sesión se rodea por un ciclo do-while para asegurar que se repita hasta que
-//        el usuario sea validad correctamente.
-//         */
-//        do {
-//            print(
-//                "---------------------------------------------\n" +
-//                        "Iniciar sesión:\n"
-//            )
-//            print("\tIngrese el nombre de usuario: ")
-//            inputNombre = readLine().toString()
-//            print("\tIngrese la contraseña: ")
-//            inputContrasenna = readLine().toString()
-//        } while (!usuario.loggin(inputNombre, inputContrasenna))    //DESCRIPCION: Condición para el ciclo do-while.
-//
-//        //DESCRIPCION: Una vez validado el usuario se le da la bienvenida a la agenda.
-//        println("\nBienvenido a tu agenda, ${usuario.nombre}.")
-
         var op: Int
         do{
             print(
