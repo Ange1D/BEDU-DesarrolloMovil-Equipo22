@@ -29,10 +29,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="&#10;Rename fun getTareas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Utilizando el object companion (variable estática) en lugar de la variable global tareas">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/proyecto/ListaTareas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/proyecto/ListaTareas.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/proyecto/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/proyecto/Menu.kt" afterDir="false" />
     </list>
     <list id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="Se agregaron archivos del proyecto que faltaban al repositorio" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625628229413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Utilizando el object companion (variable estática) en lugar de la variable global tareas">
+      <created>1626057149079</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1626057149079</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +200,7 @@
     <MESSAGE value="&#10;funcion lambda calcularLapso" />
     <MESSAGE value="&#10;Rename fun getTareas" />
     <MESSAGE value="&#10;Rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Rename" />
+    <MESSAGE value="Utilizando el object companion (variable estática) en lugar de la variable global tareas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utilizando el object companion (variable estática) en lugar de la variable global tareas" />
   </component>
 </project>

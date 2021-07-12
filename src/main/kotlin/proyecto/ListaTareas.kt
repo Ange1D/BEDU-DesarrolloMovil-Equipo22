@@ -57,9 +57,9 @@ class ListaTareas {
 
     fun eliminarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
-        usuario!!.tareasTotales = 0
+        usuario?.tareasTotales = 0
         //DESCRIPCION: Las tareas realizadas del usuario se establecen en cero para contarlas al terminar de editar la tarea.
-        usuario!!.tareasRealizadas
+        usuario?.tareasRealizadas
         println(
             "---------------------------------------------\n" +
                     "Eliminar tarea:\n"
@@ -74,7 +74,7 @@ class ListaTareas {
         }
 
         //DESCRIPCION: Las tareas totales del usuario se establecen como el tamaño de la lista de tareas.
-        usuario!!.tareasTotales = tareas.size
+        usuario?.tareasTotales = tareas.size
         //DESCRIPCION: Mediante un for y un if se contabilizan las tareas cuyo estado sea Finalizada(true)
         for (tarea in tareas) {
             if (tarea.estado)
@@ -93,11 +93,7 @@ class ListaTareas {
             "---------------------------------------------\n" +
                     "Programa del día:\n"
         )
-        if (tareas.isEmpty()) {
-            println("No hay ninguna tarea.")
-        } else {
-            imprimirTareas()
-        }
+        if (tareas.isEmpty()) println("No hay ninguna tarea.") else imprimirTareas()
     }
 
     /*
@@ -107,7 +103,7 @@ class ListaTareas {
 
     fun agregarTarea() {
         //DESCRIPCION: Las tareas totales del usuario se establecen en cero para contarlas al terminar de agregar la tarea.
-        usuario!!.tareasTotales = 0
+        usuario?.tareasTotales = 0
         //DESCRIPCION: Petición de datos de la tarea al usuario.
         println(
             "---------------------------------------------\n" +
