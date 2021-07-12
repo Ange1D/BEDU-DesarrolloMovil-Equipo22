@@ -20,10 +20,14 @@ sección para poder accederlas desde cualquier función del proyecto.
     usuario: Objeto de tipo Usuario inicializado con los datos de inicio de sesión que se utilizarán durante este
     proyecto guía.
  */
-val tareas = mutableListOf<Tarea>()
+
 var usuario: Usuario? = null
 
 class ListaTareas {
+
+    companion object {
+        val tareas = mutableListOf<Tarea>()
+    }
 
     /*
     AUTOR: JOSE BERNAL FONSECA.

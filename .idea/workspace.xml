@@ -29,10 +29,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="Nuevas validaciones y mejor definición&#10;&#10;Cambios realizados:&#10;    1) Se implementó la validación de entero en rango en las funciones editarTarea() y eliminarTarea() para asegurar que se ingrese un entero válido que se encuentre en los índices de la lista de tareas.&#10;    2) Se implementó la validación de entero en la lectura de la opción del menú.&#10;    3) Se implementó la validación de texto en el nuevo proceso de login.&#10;    4) Se cambió el mensaje para los parametros dependeciaInterna y dependenciaExterna, con el fin de que sea más claro para el usuario lo que debe introducir en dicho campo.">
+    <list default="true" id="6a4f26ff-ae6e-4081-8a1e-9bd57c069354" name="Default Changelist" comment="&#10;Rename fun getTareas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/proyecto/ListaTareas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/proyecto/ListaTareas.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/proyecto/Validaciones.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/proyecto/Validaciones.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/proyecto/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/proyecto/Menu.kt" afterDir="false" />
     </list>
     <list id="3bc41f8a-dedb-4e80-ad1f-65e1e51ace6f" name="Se agregaron archivos del proyecto que faltaban al repositorio" comment="Se agregaron archivos del proyecto que faltaban al repositorio" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,16 +44,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view />
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,38 +66,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="BEDU-DesarrolloMovil-Equipo22" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -118,10 +88,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Gradle.BEDU-DesarrolloMovil-Equipo22" />
-      <item itemvalue="Kotlin.MainKt" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
@@ -180,21 +146,7 @@
       <option name="project" value="LOCAL" />
       <updated>1625628229413</updated>
     </task>
-    <task id="LOCAL-00007" summary="Implementación de Inicio de Sesión con Thread&#10;&#10;Cambios realizados:&#10;    1) Se eliminó la función login() de la clase Usuario. Esto porque su funcionalidad será suplida por el código visto durante la sesión 8.&#10;    2) Dado que la clase Usuario ya no contiene ninguna función, se optó por convertirla en una data class.&#10;    3) Se implementó el código proporcionado por Andrés durante la sesión 8 para simular el inicio de sesión.&#10;    4) Se realizó una modificación al código proporcionado por Andrés, de manera que ahora comprueba si los datos de inicio son correctos para permitir el acceso o denegarlo.&#10;    5) Todo el proceso se realiza con el objeto &quot;usuario&quot; que veníamos usando hasta el momento, con el cambio de que ahora este objeto puede ser nulo y se inicializa en el momento del inicio de sesión.">
-      <created>1625958688546</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1625958688546</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Nuevas validaciones y mejor definición&#10;&#10;Cambios realizados:&#10;    1) Se implementó la validación de entero en rango en las funciones editarTarea() y eliminarTarea() para asegurar que se ingrese un entero válido que se encuentre en los índices de la lista de tareas.&#10;    2) Se implementó la validación de entero en la lectura de la opción del menú.&#10;    3) Se implementó la validación de texto en el nuevo proceso de login.&#10;    4) Se cambió el mensaje para los parametros dependeciaInterna y dependenciaExterna, con el fin de que sea más claro para el usuario lo que debe introducir en dicho campo.">
-      <created>1625976223331</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1625976223331</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,8 +195,6 @@
     <MESSAGE value="&#10;funcion lambda calcularLapso" />
     <MESSAGE value="&#10;Rename fun getTareas" />
     <MESSAGE value="&#10;Rename" />
-    <MESSAGE value="Implementación de Inicio de Sesión con Thread&#10;&#10;Cambios realizados:&#10;    1) Se eliminó la función login() de la clase Usuario. Esto porque su funcionalidad será suplida por el código visto durante la sesión 8.&#10;    2) Dado que la clase Usuario ya no contiene ninguna función, se optó por convertirla en una data class.&#10;    3) Se implementó el código proporcionado por Andrés durante la sesión 8 para simular el inicio de sesión.&#10;    4) Se realizó una modificación al código proporcionado por Andrés, de manera que ahora comprueba si los datos de inicio son correctos para permitir el acceso o denegarlo.&#10;    5) Todo el proceso se realiza con el objeto &quot;usuario&quot; que veníamos usando hasta el momento, con el cambio de que ahora este objeto puede ser nulo y se inicializa en el momento del inicio de sesión." />
-    <MESSAGE value="Nuevas validaciones y mejor definición&#10;&#10;Cambios realizados:&#10;    1) Se implementó la validación de entero en rango en las funciones editarTarea() y eliminarTarea() para asegurar que se ingrese un entero válido que se encuentre en los índices de la lista de tareas.&#10;    2) Se implementó la validación de entero en la lectura de la opción del menú.&#10;    3) Se implementó la validación de texto en el nuevo proceso de login.&#10;    4) Se cambió el mensaje para los parametros dependeciaInterna y dependenciaExterna, con el fin de que sea más claro para el usuario lo que debe introducir en dicho campo." />
-    <option name="LAST_COMMIT_MESSAGE" value="Nuevas validaciones y mejor definición&#10;&#10;Cambios realizados:&#10;    1) Se implementó la validación de entero en rango en las funciones editarTarea() y eliminarTarea() para asegurar que se ingrese un entero válido que se encuentre en los índices de la lista de tareas.&#10;    2) Se implementó la validación de entero en la lectura de la opción del menú.&#10;    3) Se implementó la validación de texto en el nuevo proceso de login.&#10;    4) Se cambió el mensaje para los parametros dependeciaInterna y dependenciaExterna, con el fin de que sea más claro para el usuario lo que debe introducir en dicho campo." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Rename" />
   </component>
 </project>

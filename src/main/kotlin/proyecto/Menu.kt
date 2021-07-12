@@ -105,7 +105,7 @@ que contiene esta agenda.
                             "Menú principal:\n"
                 )
                 //DESCRIPCION: Condición para revisar si la lista de tareas se encuentra vacía o no.
-                if (tareas.isEmpty()) {
+                if (ListaTareas.tareas.isEmpty()) {
                     println(
                         "\t1) Agregar tarea.\n" +
                                 "\t2) Cerrar Agenda."
@@ -129,7 +129,7 @@ que contiene esta agenda.
                 DESCRIPCION: Condición para revisar qué menú se utilizará en el condicional when que controla el menú
                 principal.
                  */
-                if (tareas.isEmpty()) {
+                if (ListaTareas.tareas.isEmpty()) {
                     when (op) {
                         1 -> ListaTareas().agregarTarea()
                         2 -> {
